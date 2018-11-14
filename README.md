@@ -7,5 +7,7 @@ TODO:
 * Create polling to Alpha Vantage
 Create parse for Reddit posts
 
+Alpha Vantage API: https://www.alphavantage.co/documentation/
+
 I'm also new to Go, so there will be use links and resources below:
 https://github.com/golang-standards/project-layout
