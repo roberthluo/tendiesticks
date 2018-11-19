@@ -8,7 +8,8 @@ import (
     "os"
 )
 
-func get_reddit() {
+// TO DO: parse json
+func read_config() {
 	type Name struct {
     	Name string `json:"subreddit_url"`
 	}
@@ -21,6 +22,24 @@ func get_reddit() {
 	if str.Name == "apple" {
 		// Do Stuff
 	}
+}
+
+
+func TIME_SERIES_INTRADAY(timestamp string, open string, high string, low string, close string, volume string) {
+	url := "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo"
+    response, err := http.Get(url)
+    if err != nil {
+        fmt.Printf("%s", err)
+        os.Exit(1)
+    } else {
+        defer response.Body.Close()
+        contents, err := ioutil.ReadAll(response.Body)
+        if err != nil {
+            fmt.Printf("%s", err)
+            os.Exit(1)
+        }
+        fmt.Printf("%s\n", string(contents))
+    }
 }
 
 
