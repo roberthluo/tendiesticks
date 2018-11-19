@@ -4,12 +4,16 @@ import (
     "fmt"
     "net/http"
 	"io/ioutil"
-	"encoding/json"
+    "encoding/json"
+    "gopkg.in/yaml.v2"
     "os"
 )
 
+
+var alphavantage_api_key = ""
+
 // TO DO: parse json
-func read_config() {
+func get_reddit() {
 	type Name struct {
     	Name string `json:"subreddit_url"`
 	}
