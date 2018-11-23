@@ -6,9 +6,9 @@ import (
 
 
 func main() {
-
+    routes.Load_config()
     // routes.Get_hottest_posts("20")
 
-    routes.TIME_SERIES_INTRADAY("", "", "", "", "", "");
+    // routes.TIME_SERIES_INTRADAY("", "", "", "", "", "");
     
 }

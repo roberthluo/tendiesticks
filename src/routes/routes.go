@@ -7,10 +7,39 @@ import (
     "encoding/json"
     "gopkg.in/yaml.v2"
     "os"
+    "log"
+    "path/filepath"
 )
 
+// Note: struct fields must be public in order for unmarshal to
+// correctly populate the data.
+type T struct {
+    User_agent string `yaml:"user_agent"`
+    Client_id string `yaml:"client_id"`
+    Client_secret string `yaml:"client_secret"`
+    Username string `yaml:"username"`
+    Password string `yaml:"password"`
+    Alpha_vantage_api_key string `yaml:"alpha_vantage_api_key"`
+}
 
-var alphavantage_api_key = ""
+func Load_config() {
+        absPath, _ := filepath.Abs("configs/config.yaml")
+        yamlFile, error := ioutil.ReadFile(absPath) // just pass the file name
+        if error != nil {
+            fmt.Print(error)
+        }
+
+        t := T{}
+        err := yaml.Unmarshal(yamlFile, &t)
+        if err != nil {
+            log.Fatalf("error: %v", err)
+        }
+        fmt.Printf("--- t:\n%v\n\n", t)
+
+
+
+}
+
 
 // TO DO: parse json
 func get_reddit() {
