@@ -5,7 +5,7 @@ import (
     "net/http"
 	"io/ioutil"
     "encoding/json"
-    "gopkg.in/yaml.v2"
+    // "gopkg.in/yaml.v2"
     "os"
 )
 

@@ -15,3 +15,6 @@ Alpha Vantage API: https://www.alphavantage.co/documentation/
 
 I'm also new to Go, so there will be use links and resources below:
 https://github.com/golang-standards/project-layout
+
+Useful Links for Go projects
+https://outcrawl.com/go-elastic-search-service
