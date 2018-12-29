@@ -10,8 +10,12 @@ func main() {
         routes.Load_config()
         // routes.GetPottestPosts("20")
 
-        routes.TimeSeriesIntraday("", "", "", "", "", "", false)
-        routes.TimeSeriesDaily("", "", "", "", "", "", false)
+        // routes.TimeSeriesIntraday("", "", "", "", "", "", false)
+        // routes.TimeSeriesDaily("", "", "", "", "", "", false)
+
+        routes.TimeSeriesWeekly("", "", "", "", "", "", false)
+        routes.TimeSeriesWeeklyAdjusted("", "", "", "", "", "", "", false)
+
 
         fmt.Printf("Setup DB. \n")
         database.SetupDB()

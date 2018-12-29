@@ -88,6 +88,61 @@ func TimeSeriesDaily(date string, dailyOpen string, dailyHigh string, dailyLow s
         }
 }
 
+
+func TimeSeriesDailyAdjusted(date string, dailyOpen string, dailyHigh string, dailyLow string, dailyAdjustedClose string, splitEvents string, dailyVolume string, isCsv bool) {
+        url := "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT&outputsize=full&apikey=demo"
+        response, err := http.Get(url)
+        if err != nil {
+                fmt.Printf("%s", err)
+                os.Exit(1)
+        } else {
+                defer response.Body.Close()
+                contents, err := ioutil.ReadAll(response.Body)
+                if err != nil {
+                        fmt.Printf("%s", err)
+                        os.Exit(1)
+                }
+                fmt.Printf("%s\n", string(contents))
+        }
+}
+
+
+
+func TimeSeriesWeekly(lastWeeklyDate string, weeklyOpen string, weeklyHigh string, weeklyLow string, weeklyClose string, weeklyVolume string, isCsv bool) {
+        url := "https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=MSFT&apikey=demo"
+        response, err := http.Get(url)
+        if err != nil {
+                fmt.Printf("%s", err)
+                os.Exit(1)
+        } else {
+                defer response.Body.Close()
+                contents, err := ioutil.ReadAll(response.Body)
+                if err != nil {
+                        fmt.Printf("%s", err)
+                        os.Exit(1)
+                }
+                fmt.Printf("%s\n", string(contents))
+        }
+}
+
+func TimeSeriesWeeklyAdjusted(lastWeeklyDate string, weeklyOpen string, weeklyHigh string, weeklyLow string, weeklyClose string, weeklyVolume string, weeklyDividend string, isCsv bool) {
+        url := "https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=demo"
+        response, err := http.Get(url)
+        if err != nil {
+                fmt.Printf("%s", err)
+                os.Exit(1)
+        } else {
+                defer response.Body.Close()
+                contents, err := ioutil.ReadAll(response.Body)
+                if err != nil {
+                        fmt.Printf("%s", err)
+                        os.Exit(1)
+                }
+                fmt.Printf("%s\n", string(contents))
+        }
+}
+
+
 func GetHottestPosts(count string) {
         url := "http://reddit.com/r/wallstreetbets/hot/.json?count=" + count
         response, err := http.Get(url)
