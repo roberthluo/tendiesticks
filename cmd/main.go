@@ -1,17 +1,20 @@
-package main 
+package main
 
 import (
-    "../api/routes"
-    "../api/database"
+        "../api/database"
+        "../api/routes"
+        "fmt"
 )
 
-
 func main() {
-    routes.Load_config()
-    // routes.GetPottestPosts("20")
+        routes.Load_config()
+        // routes.GetPottestPosts("20")
 
-    routes.TimeSeriesIntraday("", "", "", "", "", "");
-    database.SetupDB();
-    // routes.TIME_SERIES_INTRADAY("", "", "", "", "", "");
-    
+        routes.TimeSeriesIntraday("", "", "", "", "", "", false)
+        routes.TimeSeriesDaily("", "", "", "", "", "", false)
+
+        fmt.Printf("Setup DB. \n")
+        database.SetupDB()
+        // routes.TIME_SERIES_INTRADAY("", "", "", "", "", "");
+
 }
