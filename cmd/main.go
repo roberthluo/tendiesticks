@@ -8,9 +8,9 @@ import (
 
 func main() {
     routes.Load_config()
-    // routes.Get_hottest_posts("20")
+    // routes.GetPottestPosts("20")
 
-    routes.TIME_SERIES_INTRADAY("", "", "", "", "", "");
+    routes.TimeSeriesIntraday("", "", "", "", "", "");
     database.SetupDB();
     // routes.TIME_SERIES_INTRADAY("", "", "", "", "", "");
     

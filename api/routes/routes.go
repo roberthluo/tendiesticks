@@ -14,12 +14,12 @@ import (
 // Note: struct fields must be public in order for unmarshal to
 // correctly populate the data.
 type T struct {
-    User_agent string `yaml:"user_agent"`
-    Client_id string `yaml:"client_id"`
-    Client_secret string `yaml:"client_secret"`
+    UserAgent string `yaml:"user_agent"`
+    ClientID string `yaml:"client_id"`
+    ClientSecret string `yaml:"client_secret"`
     Username string `yaml:"username"`
     Password string `yaml:"password"`
-    Alpha_vantage_api_key string `yaml:"alpha_vantage_api_key"`
+    AlphaVantageApiKey string `yaml:"alpha_vantage_api_key"`
 }
 
 func Load_config() {
@@ -42,7 +42,7 @@ func Load_config() {
 
 
 // TO DO: parse json
-func get_reddit() {
+func getReddit() {
 	type Name struct {
     	Name string `json:"subreddit_url"`
 	}
@@ -58,7 +58,7 @@ func get_reddit() {
 }
 
 
-func TIME_SERIES_INTRADAY(timestamp string, open string, high string, low string, close string, volume string) {
+func TimeSeriesIntraday(timestamp string, open string, high string, low string, close string, volume string) {
 	url := "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo"
     response, err := http.Get(url)
     if err != nil {
@@ -76,7 +76,7 @@ func TIME_SERIES_INTRADAY(timestamp string, open string, high string, low string
 }
 
 
-func Get_hottest_posts(count string) {
+func GetHottestPosts(count string) {
 	url := "http://reddit.com/r/wallstreetbets/hot/.json?count=" + count
     response, err := http.Get(url)
     if err != nil {

@@ -2,7 +2,7 @@
 
 
 ```
-go run src/main.go
+go run cmd/main.go
 ```
 
 I am also hosting some/all? of the data on elasticsearch
