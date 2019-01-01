@@ -1,24 +1,24 @@
 package main
 
 import (
-        "../api/database"
+        // "../api/database"
         "../api/routes"
-        "fmt"
+        // "fmt"
 )
 
 func main() {
         routes.Load_config()
-        // routes.GetPottestPosts("20")
+        routes.GetHottestPosts("20")
 
         // routes.TimeSeriesIntraday("", "", "", "", "", "", false)
         // routes.TimeSeriesDaily("", "", "", "", "", "", false)
 
-        routes.TimeSeriesWeekly("", "", "", "", "", "", false)
-        routes.TimeSeriesWeeklyAdjusted("", "", "", "", "", "", "", false)
+        // routes.TimeSeriesWeekly("", "", "", "", "", "", false)
+        // routes.TimeSeriesWeeklyAdjusted("", "", "", "", "", "", "", false)
 
 
-        fmt.Printf("Setup DB. \n")
-        database.SetupDB()
+        // fmt.Printf("Setup DB. \n")
+        // database.SetupDB()
         // routes.TIME_SERIES_INTRADAY("", "", "", "", "", "");
 
 }

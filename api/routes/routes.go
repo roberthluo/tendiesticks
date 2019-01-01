@@ -144,8 +144,19 @@ func TimeSeriesWeeklyAdjusted(lastWeeklyDate string, weeklyOpen string, weeklyHi
 
 
 func GetHottestPosts(count string) {
+
+        client := &http.Client{}
+
         url := "http://reddit.com/r/wallstreetbets/hot/.json?count=" + count
-        response, err := http.Get(url)
+
+        req, err := http.NewRequest("GET", url, nil)
+        if err != nil {
+                log.Fatalln(err)
+        }
+
+        req.Header.Set("User-Agent", "Golang_Spider_Bot/3.0")
+
+        response, err := client.Do(req)
         if err != nil {
                 fmt.Printf("%s", err)
                 os.Exit(1)
