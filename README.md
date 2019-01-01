@@ -34,7 +34,10 @@ sudo -i service kibana stop
 http://localhost:5601/app/kibana
 ```
 
+```
+pip3 install -r requirements.txt
 
+```
 
 
 
@@ -56,3 +59,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html
 
 Visualize with Kibana
 https://www.elastic.co/guide/en/kibana/current/rpm.html
+
+Tensorflow with golang
+https://godoc.org/github.com/tensorflow/tensorflow/tensorflow/go
+
